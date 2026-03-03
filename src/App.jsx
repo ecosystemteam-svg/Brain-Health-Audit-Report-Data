@@ -554,6 +554,27 @@ export default function App() {
                 <div style={{ marginTop: 8, fontSize: 12, color: "#94a3b8" }}>Wellness: <strong style={{ color: "#6366f1" }}>{hp}/100</strong></div>
               </div>
 
+              {/* Wellness Score Card */}
+              <div style={{ ...card, textAlign: "center", background: "linear-gradient(135deg,#6366f1,#a855f7)", color: "white" }}>
+                <div style={{ fontSize: 13, opacity: 0.8 }}>Wellness Audit Score</div>
+                <div style={{ fontSize: 52, fontWeight: 900, lineHeight: 1.1, marginTop: 4 }}>{hp}</div>
+                <div style={{ fontSize: 13, opacity: 0.6 }}>/ 100</div>
+              </div>
+
+              {/* Radar Chart */}
+              <div style={card}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "#334155", marginBottom: 4 }}>🕸️ Brain-Body Wellness Radar</div>
+                <div style={{ fontSize: 11.5, color: "#94a3b8", marginBottom: 12 }}>ยิ่งกว้าง = สุขภาพสมองดี</div>
+                <RadarChart answers={ans} />
+              </div>
+
+              {/* Grouped Bar Chart */}
+              <div style={card}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "#334155", marginBottom: 4 }}>📊 สรุปผลแยกกลุ่ม</div>
+                <div style={{ fontSize: 11.5, color: "#94a3b8", marginBottom: 12 }}>จัดกลุ่มตามระดับสุขภาพสมอง</div>
+                <GroupedBars answers={ans} />
+              </div>
+
               <div style={card}>
                 <div style={{ display: "inline-block", padding: "4px 14px", borderRadius: 8, background: "linear-gradient(135deg,#6366f1,#a855f7)", color: "white", fontSize: 12, fontWeight: 700, marginBottom: 10 }}>{gi.label} ({gi.range})</div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: "#6366f1", marginBottom: 4 }}>Focus on "{gi.fe}"</div>
